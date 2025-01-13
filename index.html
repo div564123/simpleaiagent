@@ -134,12 +134,12 @@
                     const aiResponse = data.answer;
                     appendMessage(aiResponse);
                 } else {
-                    appendMessage('Une erreur s\'est produite avec la réponse de l\'IA.', false);
+                    appendMessage('An error occurred with the AI response.', false);
                 }
             })
             .catch(error => {
                 console.error('Erreur:', error);
-                appendMessage('Désolé, une erreur est survenue.', false);
+                appendMessage('Sorry, an error has occurred.', false);
             });
         }
 
