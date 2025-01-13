@@ -31,10 +31,11 @@ jobs:
         npm start &  # Démarrer le serveur en arrière-plan
         sleep 5  # Attendre un petit peu pour que le serveur démarre
 
-    # Déployer depuis la racine
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gihub-pages  
-        folder: .  
-       
+   - name: Deploy to GitHub Pages
+  uses: JamesIves/github-pages-deploy-action@v4
+  with:
+    branch: gh-pages 
+    folder: .
+    token: ${{ secrets.DEPLOY_TOKEN }}
+    clean: true
+    force: true
