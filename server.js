@@ -1,6 +1,6 @@
 require('dotenv').config();
 // Ne logguez pas directement l'API_KEY en production pour des raisons de sécurité
-console.log('API_KEY is set:', process.env.OPENAI_API_KEY !== undefined);
+console.log('API_KEY is set:', process.env.API_KEY !== undefined);
 
 // Importer les modules nécessaires
 const express = require('express');
@@ -31,7 +31,7 @@ app.post('/ai-response', async (req, res) => {
     const response = await fetch('https://api.openai.com/v1/completions', { // URL correcte pour OpenAI
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+        'Authorization': `Bearer ${process.env.API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
