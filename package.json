@@ -1,5 +1,5 @@
 {
-  "name": "votre-projet",
+  "name": "Shark AI Agent",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -8,8 +8,8 @@
     "build": "echo \"No build needed\""  // Ajoutez votre commande de build ici
   },
   "dependencies": {
-    "dotenv": "^version",
-    "express": "^version",
-    "node-fetch": "^version"
+    "dotenv": "16.4.7",
+    "express": "4.21.2",
+    "node-fetch": "2.7.0"
   }
 }
