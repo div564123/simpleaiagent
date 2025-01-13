@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main 
+      - main  # ou la branche que vous utilisez
 
 jobs:
   deploy:
@@ -15,26 +15,26 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '14' 
+        node-version: '14'  
 
     - name: Install dependencies
       run: npm install
 
     - name: Set up .env
       env:
-        API_KEY: ${{ secrets.API_KEY }} 
+        API_KEY: ${{ secrets.API_KEY }}  
       run: |
         echo "API_KEY=$API_KEY" >> .env
 
     - name: Start Server
       run: |
-        npm start & 
-        sleep 5  
+        npm start &  # Démarrer le serveur en arrière-plan
+        sleep 5  # Attendre un petit peu pour que le serveur démarre
 
+    # Déployer depuis la racine
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages  
-        folder: public  
-
+        folder: .  
        
