@@ -5,9 +5,9 @@ console.log('API_KEY is set:', process.env.API_KEY !== undefined);
 // Importer les modules nécessaires
 const express = require('express');
 const app = express();
-const fetch = require('node-fetch'); // Pour les versions de Node.js avant 18; sinon, utilisez le fetch natif
+const fetch = require('node-fetch'); 
 
-const myURL = new URL('http://www.sharkaiagent.xyz/'); // Pas nécessaire dans ce contexte, sauf si utilisé plus tard
+const myURL = new URL('http://www.sharkaiagent.xyz/');
 
 // Middleware pour parser le JSON dans les requêtes
 app.use(express.json());
