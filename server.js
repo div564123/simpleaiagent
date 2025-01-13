@@ -6,7 +6,7 @@ const app = express();
 const fetch = require('node-fetch'); // Pour les versions de Node.js avant 18, sinon, vous pouvez utiliser le fetch natif
 require('dotenv').config(); // Charger les variables d'environnement
 console.log(process.env);
-const myURL = new URL('https://example.org');
+const myURL = new URL('http://www.sharkaiagent.xyz/');
 
 // Middleware pour parser le JSON dans les requêtes
 app.use(express.json());
