@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # ou la branche que vous utilisez
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # ou la version de Node.js que vous utilisez
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build  # Si votre projet a besoin de build
+
+    - name: Deploy
+      env:
+        API_KEY: ${{ secrets.API_KEY }}  # Utiliser le secret ici
+      run: |
+        echo "API_KEY=$API_KEY" >> .env
+        # Vérifiez que votre script de déploiement utilise .env
+        npm run deploy
