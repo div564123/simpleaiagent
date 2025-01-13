@@ -1,5 +1,5 @@
 {
-  "name": "Shark AI Agent",
+  "name": "shark-ai-agent",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
