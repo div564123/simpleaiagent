@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "echo 'No build process required'"
+    "build": "echo 'No build process required'",
+    "deploy": "echo 'Deploy script to be defined'"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
