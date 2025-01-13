@@ -1,19 +1,15 @@
 {
-  "name": "SimpleAI",
+  "name": "votre-projet",
   "version": "1.0.0",
-  "description": "Simple AI agent",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo \"No build needed\""  // Ajoutez votre commande de build ici
   },
-  "keywords": [],
-  "author": "div",
-  "license": "MIT",
   "dependencies": {
-    "dotenv": "16.4.7",
-    "express": "4.21.2",
-    "node-fetch": "^2.7.0",
-    "whatwg-url": "^14.1.0"
+    "dotenv": "^version",
+    "express": "^version",
+    "node-fetch": "^version"
   }
 }
