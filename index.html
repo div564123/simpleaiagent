@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shark AI Agent</title>
     <style>
-    body {
+     body {
         font-family: 'Arial', sans-serif;
         display: flex;
         justify-content: center;
@@ -13,71 +13,8 @@
         height: 100vh;
         background: #f0f0f0;
         position: relative;
-        
-    #chat-window {
-        flex-grow: 1;
-        overflow-y: auto;
-        padding: 10px;
-        background: white;
-        margin-top: 60px; /* Adds space at the top for the logo */
-        border: 2px inset #808080; /* Simulates an inset border for that old Windows look */
-        border-radius: 0; /* Sharp corners */
-        box-shadow: inset 0 0 5px #808080; /* Adds an inner shadow for depth */
     }
-    #user-input {
-        width: 80%;
-        padding: 10px;
-        margin: 10px 0;
-    }
-    #send-btn {
-        width: 15%;
-        padding: 10px;
-        margin: 10px 0;
-    }
-    
-    /* Simple AI logo in the middle */
-    .logo {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #000; /* Dark background for the logo text */
-        color: #fff; /* White text for contrast */
-        padding: 5px 15px;
-        font-size: 16px;
-        font-weight: bold;
-        z-index: 10; /* Ensure the logo is above other content */
-    }
-
-    /* Image logo on the left */
-    .logo-image {
-        position: absolute;
-        top: 10px;  /* Adjust from top */
-        left: 10px; /* Adjust from left */
-        height: 40px; /* Increased height for a bigger logo */
-        z-index: 11; /* Ensure image is above the logo text */
-    }
-
-    /* X link in the right corner */
-    .x-link {
-        position: absolute;
-        top: 10px; /* Adjust from top */
-        right: 10px; /* Adjust from right */
-        color: #000; /* Black text for contrast */
-        text-decoration: none; /* No underline for link */
-        font-weight: bold;
-        font-size: 20px; /* Make the X more prominent */
-        background: #f0f0f0; /* White background for visibility */
-        padding: 5px 10px; /* Padding for better click area */
-        border-radius: 5px; /* Rounded corners for the X logo */
-        z-index: 10; /* Ensure the link is above other content */
-    }
-
-    @keyframes scan {
-        0% { background-position: 0% 0%; }
-        100% { background-position: 0% 100%; }
-   
-  .chat-container {
+    .chat-container {
             display: flex;
             flex-direction: column;
             height: 400px; /* Ajustez selon vos besoins */
@@ -103,11 +40,70 @@
             align-self: flex-end;
             color: white;
         }
-         }
-        .ai-prefix {
-    display: inline-block;
-    vertical-align: middle;
-    }  
+
+    #chat-window {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 10px;
+        background: white;
+        margin-top: 60px; /* Adds space at the top for the logo */
+        border: 2px inset #808080; /* Simulates an inset border for that old Windows look */
+        border-radius: 0; /* Sharp corners */
+        box-shadow: inset 0 0 5px #808080; /* Adds an inner shadow for depth */
+    }
+    #user-input {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    #send-btn {
+        width: 15%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    
+/* Simple AI logo in the middle */
+.logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000; /* Dark background for the logo text */
+    color: #fff; /* White text for contrast */
+    padding: 5px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 10; /* Ensure the logo is above other content */
+}
+
+/* Image logo on the left */
+.logo-image {
+    position: absolute;
+    top: 10px;  /* Adjust from top */
+    left: 10px; /* Adjust from left */
+    height: 40px; /* Increased height for a bigger logo */
+    z-index: 11; /* Ensure image is above the logo text */
+}
+
+/* X link in the right corner */
+.x-link {
+    position: absolute;
+    top: 10px; /* Adjust from top */
+    right: 10px; /* Adjust from right */
+    color: #000; /* Black text for contrast */
+    text-decoration: none; /* No underline for link */
+    font-weight: bold;
+    font-size: 20px; /* Make the X more prominent */
+    background: #fff; /* White background for visibility */
+    padding: 5px 10px; /* Padding for better click area */
+    border-radius: 5px; /* Rounded corners for the X logo */
+    z-index: 10; /* Ensure the link is above other content */
+}
+
+@keyframes scan {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+}
     
 </style>
 </head>
@@ -117,7 +113,7 @@
     <img src="c47bc5f0-cb12-4e33-a878-fb2b03d7919c.img" alt="Logo" class="logo-image">
     <a href="https://x.com/simpleaiagent" class="x-link" target="_blank" rel="noopener noreferrer">X</a>
     <div id="chat-window"></div>
-   <div class="message message-ai"><span class="ai-prefix"><img src="c47bc5f0-cb12-4e33-a878-fb2b03d7919c.img" alt="AI:" </div>
+   <div class="message message-ai"><span class="ai-prefix"><img src="c47bc5f0-cb12-4e33-a878-fb2b03d7919c.img" alt="AI:" small-logo</div>
    <div class="message message-ai">I am Shark AI Agent, your multifunctional assistant. How can I assist you today?</div>
        <input type="text" id="user-input" placeholder="Type your message...">
     <button id="send-btn">Send</button>
