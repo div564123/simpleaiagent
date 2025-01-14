@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shark AI Agent</title>
     <style>
-       body {
+    body {
         font-family: 'Arial', sans-serif;
         display: flex;
         justify-content: center;
@@ -43,49 +43,68 @@
         margin: 10px 0;
     }
     
-/* Simple AI logo in the middle */
-.logo {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #000; /* Dark background for the logo text */
-    color: #fff; /* White text for contrast */
-    padding: 5px 15px;
-    font-size: 16px;
-    font-weight: bold;
-    z-index: 10; /* Ensure the logo is above other content */
-}
+    /* Simple AI logo in the middle */
+    .logo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #000; /* Dark background for the logo text */
+        color: #fff; /* White text for contrast */
+        padding: 5px 15px;
+        font-size: 16px;
+        font-weight: bold;
+        z-index: 10; /* Ensure the logo is above other content */
+    }
 
-/* Image logo on the left */
-.logo-image {
-    position: absolute;
-    top: 10px;  /* Adjust from top */
-    left: 10px; /* Adjust from left */
-    height: 40px; /* Increased height for a bigger logo */
-    z-index: 11; /* Ensure image is above the logo text */
-}
+    /* Image logo on the left */
+    .logo-image {
+        position: absolute;
+        top: 10px;  /* Adjust from top */
+        left: 10px; /* Adjust from left */
+        height: 40px; /* Increased height for a bigger logo */
+        z-index: 11; /* Ensure image is above the logo text */
+    }
 
-/* X link in the right corner */
-.x-link {
-    position: absolute;
-    top: 10px; /* Adjust from top */
-    right: 10px; /* Adjust from right */
-    color: #000; /* Black text for contrast */
-    text-decoration: none; /* No underline for link */
-    font-weight: bold;
-    font-size: 20px; /* Make the X more prominent */
-    background: #f0f0f0; /* White background for visibility */
-    padding: 5px 10px; /* Padding for better click area */
-    border-radius: 5px; /* Rounded corners for the X logo */
-    z-index: 10; /* Ensure the link is above other content */
-}
+    /* X link in the right corner */
+    .x-link {
+        position: absolute;
+        top: 10px; /* Adjust from top */
+        right: 10px; /* Adjust from right */
+        color: #000; /* Black text for contrast */
+        text-decoration: none; /* No underline for link */
+        font-weight: bold;
+        font-size: 20px; /* Make the X more prominent */
+        background: #f0f0f0; /* White background for visibility */
+        padding: 5px 10px; /* Padding for better click area */
+        border-radius: 5px; /* Rounded corners for the X logo */
+        z-index: 10; /* Ensure the link is above other content */
+    }
 
-@keyframes scan {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 0% 100%; }
-}
-    </style>
+    @keyframes scan {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 0% 100%; }
+    }
+    
+    /* New styles for messages */
+    .message {
+        max-width: 80%;
+        padding: 10px;
+        margin: 5px 0;
+        display: inline-block;
+        border-radius: 0; /* To make them square */
+    }
+    .ai-message {
+        background: #e0e0e0; /* Light gray for AI messages */
+        color: black;
+        align-self: flex-start;
+    }
+    .user-message {
+        background: #007aff; /* Blue for user messages */
+        color: white;
+        align-self: flex-end;
+    }
+</style>
 </head>
 <body>
   <div class="chat-container">
