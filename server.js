@@ -6,7 +6,10 @@ console.log('API_KEY is set:', process.env.API_KEY !== undefined);
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch'); 
-
+if (!process.env.API_KEY) {
+  console.error('API_KEY is not set in the environment variables');
+  process.exit(1); // Arrête le script avec un code d'erreur
+}
 const myURL = new URL('http://www.sharkaiagent.xyz/');
 
 // Middleware pour parser le JSON dans les requêtes
@@ -63,8 +66,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-// Démarrer le serveur
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Serveur en marche sur le port ${PORT}`);
-});
+
