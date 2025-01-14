@@ -30,8 +30,46 @@
         margin-top: 60px; /* Adds space at the top for the logo */
         border: 2px inset #808080; /* Simulates an inset border for that old Windows look */
         border-radius: 0; /* Sharp corners */
-        box-shadow: inset 0 0 5px #808080; /* Adds an inner shadow for depth */
+        box-shadow: inset 0 0 5px #808080;
+        padding: 20px;
     }
+        .message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+/* User messages */
+.user-message {
+    background-color: #007aff;
+    color: white;
+    align-self: flex-end;
+    border-top-right-radius: 0;
+}
+
+/* AI messages */
+.ai-message {
+    background-color: #e5e5ea; /* Light gray for AI messages, like iMessage */
+    color: black;
+    align-self: flex-start;
+    border-top-left-radius: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* AI logo within messages */
+.ai-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* New styles for the AI's initial message */
+.ai-message span {
+    font-size: 14px;
+}
     #user-input {
         width: 80%;
         padding: 10px;
@@ -94,6 +132,8 @@
     <img src="c47bc5f0-cb12-4e33-a878-fb2b03d7919c.img" alt="Logo" class="logo-image">
     <a href="https://x.com/simpleaiagent" class="x-link" target="_blank" rel="noopener noreferrer">X</a>
     <div id="chat-window"></div>
+      <div class="message ai-message"><img src="c47bc5f0-cb12-4e33-a878-fb2b03d7919c.img" alt="AI Logo" class="ai-logo"> 
+    <span>I am the shark ai agent how can i help you today?</span>
        <input type="text" id="user-input" placeholder="Type your message...">
     <button id="send-btn">Send</button>
   </div>
