@@ -124,10 +124,9 @@
         <input type="text" id="user-input" placeholder="Type your message...">
         <button id="send-btn">Send</button>
     </div>
-   <script>
+  <script>
     const API_URL = "${process.env.API_URL || '/ai-response'}";
     const chatWindow = document.getElementById('chat-window');
-    const chatMessages = document.getElementById('chat-messages'); // Make sure this ID exists in your HTML
     const userInput = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
 
@@ -148,18 +147,18 @@
             messageElement.appendChild(logo);
             messageElement.appendChild(textSpan);
         }
-        chatMessages.appendChild(messageElement); // Append to chatMessages instead of chatWindow
-        chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom
+        chatWindow.appendChild(messageElement);
     }
 
     document.addEventListener('DOMContentLoaded', function() {
+        const chatMessages = document.getElementById('chat-messages');
         if (chatMessages) {
             const initialMessage = document.createElement('div');
             initialMessage.className = 'message ai-message';
             initialMessage.textContent = "Hi there! I'm Shark, your AI assistant. Just let me know how I can make your day easier! - I can help you find information, answer questions, provide recommendations, or assist with tasks.";
             chatMessages.appendChild(initialMessage);
-            chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom after adding the message
         }
+        chatWindow.scrollTop = chatWindow.scrollHeight;
     });
 
     function sendMessage() {
@@ -173,7 +172,7 @@
         userInput.value = '';
 
         // Send the message to your backend instead of directly to an external API
-        fetch('/ai-response', { 
+        fetch('/ai-response', { // Assurez-vous que ce chemin correspond à votre endpoint backend
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -182,7 +181,7 @@
         })
         .then(response => response.json())
         .then(data => {
-            if (data && data.answer) { 
+            if (data && data.answer) { // Assurez-vous que le format de réponse correspond à ce que votre backend envoie
                 const aiResponse = data.answer;
                 appendMessage(aiResponse);
             } else {
