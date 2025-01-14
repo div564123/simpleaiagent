@@ -126,10 +126,10 @@
 
         function appendMessage(message, isUser = false) {
             const messageElement = document.createElement('div');
-            messageElement.textContent = isUser ? `You: ${message}` : `AI: ${message}`;
-            messageElement.style.color = isUser ? 'blue' : 'black';
+            messageElement.textContent = message;
+            messageElement.className = isUser ? 'message message-user' : 'message message-ai';
             chatWindow.appendChild(messageElement);
-            chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom
+            chatWindow.scrollTop = chatWindow.scrollHeight;
         }
 
 
