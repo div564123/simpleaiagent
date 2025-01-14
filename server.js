@@ -1,6 +1,9 @@
-require('dotenv').config();
-// Ne logguez pas directement l'API_KEY en production pour des raisons de sécurité
-console.log('API_KEY is set:', process.env.API_KEY !== undefined);
+require('dotenv').config(); 
+
+if (!process.env.API_KEY) {
+  console.error('API_KEY is not set in the environment variables');
+  process.exit(1);
+}
 
 // Importer les modules nécessaires
 const express = require('express');
