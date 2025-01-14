@@ -137,21 +137,23 @@
             if (isUser) {
                 messageElement.textContent = `You: ${message}`;
             } else {
-              
                 const logo = document.createElement('img');
                 logo.src = 'c47bc5f0-cb12-4e33-a878-fb2b03d7919c.img'; 
                 logo.alt = 'AI Logo';
                 logo.className = 'ai-logo';
                 
-               
                 const textSpan = document.createElement('span');
                 textSpan.textContent = message;
-                
-                messageElement.appendChild(logo);
-                messageElement.appendChild(textSpan);
-                 initialMessage.className = 'message';
-        initialMessage.textContent = "Hi there! I'm Shark, your AI assistant. Just let me know how I can make your day easier! - I can help you find information, answer questions, provide recommendations, or assist with tasks.";
-        chatMessages.appendChild(initialMessage);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chat-messages');
+            if (chatMessages) {
+                const initialMessage = document.createElement('div');
+                initialMessage.className = 'message';
+                initialMessage.textContent = "Hi there! I'm Shark, your AI assistant. Just let me know how I can make your day easier! - I can help you find information, answer questions, provide recommendations, or assist with tasks.";
+                chatMessages.appendChild(initialMessage);
             }
             
             chatWindow.appendChild(messageElement);
