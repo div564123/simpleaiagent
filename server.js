@@ -13,7 +13,7 @@ const myURL = new URL('http://www.sharkaiagent.xyz/');
 app.use(express.json());
 
 // Servir les fichiers statiques du dossier 'public'
-app.use(express.static('public'));
+app.use(express.static('.'));
 
 // Middleware CORS doit être défini avant les routes pour s'appliquer à toutes
 app.use((req, res, next) => {
