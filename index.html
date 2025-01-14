@@ -148,14 +148,11 @@
            
             const textSpan = document.createElement('span');
             textSpan.textContent = message;
+            chatWindow.appendChild(messageElement);
+        chatWindow.scrollTop = chatWindow.scrollHeight; 
         }        
 
-    {
-      chatWindow.appendChild(messageElement);
-        chatWindow.scrollTop = chatWindow.scrollHeight; 
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
         const chatMessages = document.getElementById('chat-messages');
         if (chatMessages) {
             const initialMessage = document.createElement('div');
