@@ -4,6 +4,12 @@ if (!process.env.API_KEY) {
   console.error('API_KEY is not set in the environment variables');
   process.exit(1);
 }
+function showWelcomeMessage() {
+    appendMessage("I am Shark AI Agent, your multifunctional assistant. How can I assist you today?", false);
+}
+
+// Show the welcome message when the page loads
+showWelcomeMessage();
 
 // Importer les modules nécessaires
 const express = require('express');
