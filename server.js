@@ -4,9 +4,29 @@ if (!process.env.API_KEY) {
   console.error('API_KEY is not set in the environment variables');
   process.exit(1);
 }
-function showWelcomeMessage() {
-    appendMessage("I am Shark AI Agent, your multifunctional assistant. How can I assist you today?", false);
+function appendMessage(message, isUser = false) {
+    const messageElement = document.createElement('div');
+    messageElement.className = isUser ? 'message user-message' : 'message ai-message';
+    
+    if (isUser) {
+        messageElement.textContent = `You: ${message}`;
+    } else {
+      
+        const logo = document.createElement('img');
+        logo.src = 'c47bc5f0-cb12-4e33-a878-fb2b03d7919c.img'; 
+        logo.alt = 'AI Logo';
+        logo.className = 'ai-logo';
+        
+       
+        const textSpan = document.createElement('span');
+        textSpan.textContent = message;
+        
+        initialMessage.className = 'message';
+        initialMessage.textContent = "Hi there! I'm Shark, your AI assistant. Just let me know how I can make your day easier! - I can help you find information, answer questions, provide recommendations, or assist with tasks.";
+        chatMessages.appendChild(initialMessage);
+    }
 }
+
 
 // Show the welcome message when the page loads
 showWelcomeMessage();
