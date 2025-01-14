@@ -150,11 +150,7 @@
             textSpan.textContent = message;
             chatWindow.appendChild(messageElement);
         chatWindow.scrollTop = chatWindow.scrollHeight; 
-        }        
-
-        document.addEventListener('DOMContentLoaded', function() {
-        const chatMessages = document.getElementById('chat-messages');
-        if (chatMessages) {
+            
             const initialMessage = document.createElement('div');
             initialMessage.className = 'message ai-message';
             initialMessage.textContent = "Hi there! I'm Shark, your AI assistant. Just let me know how I can make your day easier! - I can help you find information, answer questions, provide recommendations, or assist with tasks.";
