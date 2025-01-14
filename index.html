@@ -14,13 +14,32 @@
         background: #f0f0f0;
         position: relative;
     }
-    .chat-container {
-        width: 50%;
-        height: 500px;
-        border: 1px solid #ccc;
-        display: flex;
-        flex-direction: column;
-        position: relative;
+    chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 400px; /* Ajustez selon vos besoins */
+            width: 300px; /* Ajustez selon vos besoins */
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .message {
+            max-width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px; /* Coins arrondis pour un look Apple-like */
+            display: inline-block;
+        }
+        .message-ai {
+            background: #e0e0e0; /* Couleur de fond style Apple */
+            align-self: flex-start;
+            color: black;
+        }
+        .message-user {
+            background: #007aff; /* Bleu style Apple pour les messages utilisateurs */
+            align-self: flex-end;
+            color: white;
+        
     }
     #chat-window {
         flex-grow: 1;
@@ -86,24 +105,6 @@
         100% { background-position: 0% 100%; }
     }
     
-    /* New styles for messages */
-    .message {
-        max-width: 80%;
-        padding: 10px;
-        margin: 5px 0;
-        display: inline-block;
-        border-radius: 0; /* To make them square */
-    }
-    .ai-message {
-        background: #e0e0e0; /* Light gray for AI messages */
-        color: black;
-        align-self: flex-start;
-    }
-    .user-message {
-        background: #007aff; /* Blue for user messages */
-        color: white;
-        align-self: flex-end;
-    }
 </style>
 </head>
 <body>
@@ -112,6 +113,7 @@
     <img src="c47bc5f0-cb12-4e33-a878-fb2b03d7919c.img" alt="Logo" class="logo-image">
     <a href="https://x.com/simpleaiagent" class="x-link" target="_blank" rel="noopener noreferrer">X</a>
     <div id="chat-window"></div>
+    <div class="message message-ai">I am Shark AI Agent, your multifunctional assistant. How can I assist you today?</div>
     <input type="text" id="user-input" placeholder="Type your message...">
     <button id="send-btn">Send</button>
   </div>
@@ -129,8 +131,7 @@
             chatWindow.appendChild(messageElement);
             chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom
         }
-        appendMessage("I am Shark AI Agent, your multifunctional assistant. How can I assist you today?", false);
-    
+
 
         function sendMessage() {
             const message = userInput.value.trim();
